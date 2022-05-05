@@ -1,0 +1,77 @@
+import css from 'styled-jsx/css';
+
+/*language=SCSS*/
+const staticStyles = css`
+  @import 'src/_mixins/vars';
+  @import 'src/_mixins/screen-size';
+
+  .Row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 16px;
+    @include respond-to(sm) {
+      font-size: $regular;
+      display: flex;
+      align-items: center;
+    }
+
+    &__column {
+      display: block;
+      text-align: center;
+      .Row__title-inner {
+        margin-bottom: 8px;
+      }
+      .Row__title {
+        padding-right: 0;
+      }
+      .Row__content {
+        display: block;
+      }
+    }
+
+    &__title-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1;
+    }
+    &__title {
+      padding-right: 10px;
+    }
+    &__subtitle {
+      font-size: 16px;
+    }
+
+    &__normal {
+      .Row__title-inner {
+        font-weight: 400;
+      }
+    }
+
+    &__light {
+      .Row__title-inner {
+        font-weight: 300;
+      }
+    }
+
+    &__withMargin {
+      margin-bottom: 15px;
+      @include respond-to(lg) {
+        margin-bottom: 10px;
+      }
+      @include respond-to(md) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+`;
+
+export default staticStyles;
